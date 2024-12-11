@@ -16,10 +16,10 @@ public class PowerButton extends Button {
 
         if(status) {
             status = false;
-            System.out.println("전원을 끕니다.");
+            System.out.println("전원이 꺼졌습니다.");
         } else {
             status = true;
-            System.out.println("전원을 켭니다.");
+            System.out.println("전원이 켜졌습니다.");
         }
     }
 

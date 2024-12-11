@@ -59,21 +59,55 @@ public class Main {
         다만, 여태까지와의 차이점은 new 클래스2명(), new 클래스3명()에 해당하는 객체명이 없을 뿐입니다.
          */
 
-        RemoteController remoteController = new RemoteController(new PowerButton(), new ChannerDownButton(), new ChannerUpButton());
+        // 리모콘 버튼 구현하기
+        RemoteController remoteController = new RemoteController(new PowerButton(), new ChannerDownButton(), new ChannerUpButton(), new VolumeDownButton(), new VolumeUpButton());
 
 
+        // 전원 켜고 끄기
         remoteController.onPressedPowerButton();
         remoteController.onPressedPowerButton();
         remoteController.onPressedPowerButton();
         System.out.println();
 
+        // 채널 내리기
         remoteController.onPressedChannerDownButton();
         remoteController.onDownChannerDownButton();
         System.out.println();
 
+        // 채널 올리기
         remoteController.onPressedChannerUpButton();
         remoteController.onUpChannerUpButton();
+        System.out.println();
 
+        // 볼륨 내리기
+        remoteController.onDownVolumeDownButton();
+        remoteController.onPressedVolumeDownButton();
+        System.out.println();
+
+        // 볼륨 올리기
+        remoteController.onUpVolumeDownButton();
+        remoteController.onPressedVolumeUpButton();
+        System.out.println();
+
+
+
+        // 에어컨 리모콘 구현하기
+        AirConditionerController airConditionerController = new AirConditionerController(new PowerButton(), new TemperatureDownButton(), new TemperatureUpButton());
+
+        // 전원 켜고 끄기
+        remoteController.onPressedPowerButton();
+        remoteController.onPressedPowerButton();
+        remoteController.onPressedPowerButton();
+        System.out.println();
+
+        // 온도 내리기
+        airConditionerController.onPressedTemperatureDownButton();
+        airConditionerController.onDownTemperatureDownButton();
+        System.out.println();
+
+        // 온도 높히기
+        airConditionerController.onPressedTemperatureUpButton();
+        airConditionerController.onUpTemperatureUpButton();
 
     }
 }
@@ -83,4 +117,21 @@ public class Main {
     3. RemoteController.java의 AllArgsConstructor를 만족하기 위해 생성자를 수정하시오.
     4. VolumeDownButton, VoulmeUpButton에 있는 메서드들을 RemoteController.java에 재구현하시오.
     5. Main으로 넘어와서 볼륨 한 칸 내리기, 계속 내리기, 한 칸 올리기, 계속 올리기를 실행하시오.
+
+
+    추가 과제
+
+    온도 조절 버튼과 에어컨 리모콘 구현하기
+
+    TemperatureDownButton, TemperatureUpButton, AirConditionerController.java 클FO스들을 만들어서
+    Main에 AirConditionerController의 객체를 생성한 후
+
+    전원이 켜졌습니다.
+    전원이 꺼졌습니다.
+
+    온도를 한 칸 내립니다.
+    온도를 계속 내립니다.
+
+    온도를 한 칸 올립니다.
+    온도를 계속 올립니다.
  */
